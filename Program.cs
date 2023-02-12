@@ -1,4 +1,11 @@
-﻿
+﻿using ExtendableConsoleApplication;
 
+bool isOpened = true;
 
-Console.WriteLine("Test!");
+while (isOpened)
+{
+    CommandManager.Invite();
+    CommandManager.GetCommands();
+    CommandManager.GetUserInput();
+    CommandManager.ExecuteCommand();
+}
