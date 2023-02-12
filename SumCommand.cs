@@ -11,12 +11,20 @@ namespace ExtendableConsoleApplication
     {
         public void Execute()
         {
-            
+            Console.WriteLine("Enter a, b");
+            var result = Sum(Convert.ToDouble(Console.ReadLine()), 
+                Convert.ToDouble(Console.ReadLine()));
+            Console.WriteLine("a + b = {0}", result);
         }
 
-        public void GetCommandDescription()
+        private double Sum(double a, double b)
         {
-            throw new NotImplementedException();
+            return a + b;
+        }
+
+        public string GetCommandDescription()
+        {
+            return "Command - SUM:Enter a, b to get a + b";
         }
     }
 }

@@ -4,8 +4,8 @@ bool isOpened = true;
 
 while (isOpened)
 {
-    CommandManager.Invite();
     CommandManager.GetCommands();
+    CommandManager.Invite();
     CommandManager.GetUserInput();
     CommandManager.ExecuteCommand();
 }

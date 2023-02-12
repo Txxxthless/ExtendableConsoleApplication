@@ -8,8 +8,8 @@ namespace ExtendableConsoleApplication
 {
     internal static class CommandManager
     {
-        private static List<ICommand> Commands = new List<ICommand>() { };
-        private static ConsoleKeyInfo? UserInput;
+        private static List<ICommand> Commands = new List<ICommand>() {new SumCommand() };
+        private static int UserInput;
 
         public static void Invite()
         {
@@ -18,15 +18,24 @@ namespace ExtendableConsoleApplication
 
         public static void GetCommands()
         {
-            foreach (var command in Commands)
+            Console.WriteLine("Available Commands: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            for (int i = 0; i < Commands.Count; i++)
             {
-                command.GetCommandDescription();
+                Console.WriteLine("\tCOMMAND INDEX: {0} \n\tDESCRIPTION: {1}\n" ,i ,Commands[i].GetCommandDescription());
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static void GetUserInput()
         {
-            UserInput = Console.ReadKey();
+            while (
+                !int.TryParse(Console.ReadLine(), out UserInput) || (UserInput < 0) || UserInput > Commands.Count
+                ) 
+            { 
+                Console.WriteLine("INCORRECT INDEX UNPUT!");
+            }
+            Console.WriteLine();
         }
 
         public static void ExecuteCommand()

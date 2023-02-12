@@ -9,6 +9,6 @@ namespace ExtendableConsoleApplication
     internal interface ICommand
     {
         public void Execute();
-        public void GetCommandDescription();
+        public string GetCommandDescription();
     }
 }
