@@ -24,7 +24,7 @@ namespace ExtendableConsoleApplication
 
         public string GetCommandDescription()
         {
-            return "Command - SUM:Enter a, b to get a + b";
+            return "Command - SUM: Enter a, b to get a + b";
         }
     }
 }
