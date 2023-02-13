@@ -8,7 +8,7 @@ namespace ExtendableConsoleApplication
 {
     internal static class CommandManager
     {
-        private static List<ICommand> Commands = new List<ICommand>() {new SumCommand(), new TimeCommand()};
+        private static List<ICommand> Commands = new List<ICommand>() {new SumCommand(), new TimeCommand(), new RegistrationCommand()};
         private static int UserInput;
         private static ICommand? ExecutableCommand;
 

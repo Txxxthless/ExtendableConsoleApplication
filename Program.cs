@@ -14,4 +14,5 @@ while (isOpened)
     if (Console.ReadKey().Key == ConsoleKey.E) isOpened = false;
     Console.WriteLine();
     Console.ForegroundColor = ConsoleColor.White;
+    Console.Clear();
 }   
